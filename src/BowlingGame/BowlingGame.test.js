@@ -3,6 +3,21 @@ const BowlingGame = require('./BowlingGame');
 describe('BowlingGame', () => {
   let game;
 
+  function rollMany(n, pins) {
+    for (let i = 0; i < n; i++) {
+      game.roll(pins);
+    }
+  }
+
+  function rollSpare() {
+    game.roll(5);
+    game.roll(5);
+  }
+
+  function rollStrike() {
+    game.roll(10);
+  }
+
   beforeEach(() => {
     game = new BowlingGame();
   });
@@ -37,18 +52,4 @@ describe('BowlingGame', () => {
     expect(game.getScore()).toEqual(300);
   });
 
-  function rollMany(n, pins) {
-    for (let i = 0; i < n; i++) {
-      game.roll(pins);
-    }
-  }
-
-  function rollSpare() {
-    game.roll(5);
-    game.roll(5);
-  }
-
-  function rollStrike() {
-    game.roll(10);
-  }
 });
