@@ -7,6 +7,10 @@ class BowlingGame {
     this.rolls.push(pins);
   }
 
+  rollIt(pins) {
+    this.rolls.push(pins);
+  }
+
   getScore() {
     let score = 0;
     let frameIndex = 0;
